@@ -1,0 +1,30 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    height: 100%;
+  }
+  
+  /* a {
+    color: inherit;
+    text-decoration: none;
+  } */
+  
+  .text {
+    font-size: 48px;
+    font-family: Rammetto One;
+    line-height: 80px;
+    color: #FF4D00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 580px) {
+  .text.css-1mtsi1h {
+    flex-direction: column;
+  } 
+}
