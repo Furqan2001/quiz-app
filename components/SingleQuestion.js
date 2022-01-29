@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
-import { Box, Image, Flex, Center } from "@chakra-ui/react";
+import { Box, Flex, Center } from "@chakra-ui/react";
+// import { OptionImage, StatusImage } from "../util/ImageConverter";
+import Image from "next/image";
 
 function SingleQuestion({
   onSubmitAnswer,
-  question: { option1, option2, correctOption }
+  question: { option1, option2, correctOption, height }
 }) {
   const [clicked, setClicked] = useState(false);
   const [answerState, setAnswerState] = useState("");
@@ -55,21 +57,31 @@ function SingleQuestion({
           onClick={() => optionHandler(1)}
         >
           <Center maxW="400px" h="300" p="5">
-            <Image
-              src={option1}
-              alt="option1"
-              ref={firstOptionRef}
-              maxH="100%"
-            />
-            <Image
-              src={`images/${answerState}_answer.png`}
-              alt="correct_answer"
-              maxW="40%"
+            <Box ref={firstOptionRef} maxH="100%">
+              <Image
+                src={option1}
+                alt="option1"
+                width="400"
+                height={height || "200"}
+                // priority="true"
+              />
+            </Box>
+            <Box
+              ref={firstImageStatusRef}
+              maxW="30%"
               maxH="50%"
               pos="fixed"
               visibility="hidden"
-              ref={firstImageStatusRef}
-            />
+            >
+              {answerState !== "" ? (
+                <Image
+                  src={`/images/${answerState}_answer.png`}
+                  alt="correct_answer"
+                  width="400"
+                  height={height || "200"}
+                />
+              ) : null}
+            </Box>
           </Center>
         </Box>
         <Box
@@ -81,21 +93,31 @@ function SingleQuestion({
           onClick={() => optionHandler(2)}
         >
           <Center maxW="400px" h="300" p="5">
-            <Image
-              src={option2}
-              alt="option2"
-              ref={secondOptionRef}
-              maxH="100%"
-            />
-            <Image
-              src={`images/${answerState}_answer.png`}
-              alt="wrong_answer"
-              maxW="40%"
+            <Box ref={secondOptionRef} maxH="100%">
+              <Image
+                src={option2}
+                alt="option2"
+                width="400"
+                height={height || "200"}
+                // priority="true"
+              />
+            </Box>
+            <Box
+              ref={secondImageStatusRef}
+              maxW="30%"
               maxH="50%"
               pos="fixed"
               visibility="hidden"
-              ref={secondImageStatusRef}
-            />
+            >
+              {answerState !== "" ? (
+                <Image
+                  src={`/images/${answerState}_answer.png`}
+                  alt="wrong_answer"
+                  width="400"
+                  height={height || "200"}
+                />
+              ) : null}
+            </Box>
           </Center>
         </Box>
       </Flex>

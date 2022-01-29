@@ -23,6 +23,7 @@ body {
   box-sizing: border-box;
 }
 
+
 @media screen and (max-width: 580px) {
   .text.css-1mtsi1h {
     flex-direction: column;
