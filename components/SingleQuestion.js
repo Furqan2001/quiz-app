@@ -32,7 +32,7 @@ function SingleQuestion({
         onSubmitAnswer(status);
         if (firstOptionRef.current) restoreQuestionsState();
         setClicked(false);
-      }, 1200);
+      }, 1000);
     }
   };
 
