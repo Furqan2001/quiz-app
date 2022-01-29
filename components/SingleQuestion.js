@@ -78,7 +78,7 @@ function SingleQuestion({
                   src={`/images/${answerState}_answer.png`}
                   alt="correct_answer"
                   width="400"
-                  height={height || "200"}
+                  height="280"
                 />
               ) : null}
             </Box>
@@ -114,7 +114,7 @@ function SingleQuestion({
                   src={`/images/${answerState}_answer.png`}
                   alt="wrong_answer"
                   width="400"
-                  height={height || "200"}
+                  height="280"
                 />
               ) : null}
             </Box>
